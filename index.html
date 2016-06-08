@@ -5,14 +5,18 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
-    <h1 class="title">User Count</h1>
-    <p class="count">0</p>
+    <div class="alarm-wrapper">
+        <img src="images/alarm.svg" alt="alarm clock">
+        <div id="alarm-sound">
+            
+        </div>
+    </div>
     
     <div class="change-value-wrapper">
-        <label for="user-count"></label>
-        <input id="user-count" type="number" />
-        <button id="user-count-btn">Submit</button>
+        <!--<label for="user-count"></label>
+        <input id="user-count" type="number" />-->
+        <button class="on-alarm btn">On</button>
+        <buton class="off-alarm btn">Off</button>
     </div>
     
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
