@@ -1,0 +1,9 @@
+/*
+    This is a simple example of the json structure I have created in firebase.
+ */
+
+{
+  "userPopulation" : {
+    "userCount" : "1337"
+  }
+}

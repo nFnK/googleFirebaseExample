@@ -1,0 +1,31 @@
+body {
+	background: #4dd0e1;
+}
+.title, .count {
+	color: #FFF;
+	text-align: center;
+}
+.count {
+	font-size: 2rem;
+    font-weight: 700;
+}
+.change-value-wrapper {
+    text-align: center;
+}
+#user-count {
+    border: none;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    padding: 5px;
+    width: 100px;
+}
+#user-count-btn {
+    background: #00838f;
+    border: none;
+    border-radius: 7px;
+    color: #FFF;
+    display: block;
+    font-size: 2rem;
+    margin: 35px auto 0 auto;
+    width: 200px;
+}
