@@ -29,7 +29,9 @@ eaglejs - Simple Google Firebase Example
 
 ==================
 
-This is to demonstrate how to show data and change the data using javascript in a firebase database.
+This is to demonstrate how to show data and change the data in real time using javascript in a firebase database. Try
+opening this up in multiple browsers and watch each one get updated at the same time. :) Firebase is really powerful and is great
+for many applications.
 
 This uses an example database on my firebase account. Contact me if you have any questions.
 
