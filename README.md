@@ -29,8 +29,9 @@ eaglejs - Simple Google Firebase Example
 
 ==================
 
-This uses an example database on my firebase account. Contact me if you have any questions.
+This is to demonstrate how to show data and change the data using javascript in a firebase database.
 
+This uses an example database on my firebase account. Contact me if you have any questions.
 
 Created by Joshua Eagle (joshuaseagle@gmail.com) : www.eagle-js.com
 
