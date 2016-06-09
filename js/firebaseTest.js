@@ -11,8 +11,7 @@
             storageBucket: "example-a01c4.appspot.com",
         },
         elAlarmClock = document.querySelector(".alarm-wrapper img"),
-        elOnAlarmBtn = document.querySelector(".on-alarm"),
-        elOffAlarmBtn = document.querySelector(".off-alarm"),
+        elOnOffAlarmBtn = document.querySelectorAll(".on-alarm, .off-alarm"),
         elAlarmSound = document.querySelector("#alarm-sound");
 
     // Initialize your instance of firebase    
@@ -25,7 +24,7 @@
         This is a firebase reference that grabs my json object and also by default refreshes the value on the page
         which I pass into the callback function. This is where all of the magic happens.
     */
-    db.ref('userPopulation/userCount').on('value', function (snapshot) {
+    db.ref('AlarmFlag').on('value', function (snapshot) {
         if (snapshot.val() === 1) {
             elAlarmClock.className = "shake";
             elAlarmSound.innerHTML = "<audio autoplay loop>" +
@@ -41,10 +40,14 @@
        These are event listeners for the click of the buttons I made
        It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
     */
-    elOnAlarmBtn.addEventListener("click", function () {
-        db.ref('userPopulation/userCount').set(1);
-    });
-    elOffAlarmBtn.addEventListener("click", function () {
-        db.ref('userPopulation/userCount').set(0);
-    });
+    for (var i =0 ; i < elOnOffAlarmBtn.length ; i++) {
+        elOnOffAlarmBtn[i].addEventListener("click", function (e) {
+            db.ref('AlarmFlag').set(parseInt(e.currentTarget.getAttribute("value")));
+        });
+    }
+
+    // I don't need two of virtually the same code here...
+    // elOffAlarmBtn.addEventListener("click", function () {
+    //     db.ref('AlarmFlag').set(0);
+    // });
 })();
