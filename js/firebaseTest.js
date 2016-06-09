@@ -45,9 +45,4 @@
             db.ref('AlarmFlag').set(parseInt(e.currentTarget.getAttribute("value")));
         });
     }
-
-    // I don't need two of virtually the same code here...
-    // elOffAlarmBtn.addEventListener("click", function () {
-    //     db.ref('AlarmFlag').set(0);
-    // });
 })();
