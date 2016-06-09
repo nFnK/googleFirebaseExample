@@ -25,7 +25,6 @@ db = firebase.database();
     which I pass into the callback function. This is where all of the magic happens.
 */
 db.ref('userPopulation/userCount').on('value', function(snapshot) {
-  console.log(snapshot);
   if (snapshot.val() === 1) {
     elAlarmClock.className = "shake";
     elAlarmSound.innerHTML = "<embed src='sounds/play.mp3' autostart=true loop=true volume=100 hidden=true>";
