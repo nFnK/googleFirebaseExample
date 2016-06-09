@@ -27,7 +27,9 @@ db = firebase.database();
 db.ref('userPopulation/userCount').on('value', function(snapshot) {
   if (snapshot.val() === 1) {
     elAlarmClock.className = "shake";
-    elAlarmSound.innerHTML = "<embed src='sounds/play.mp3' autostart=true loop=true volume=100 hidden=true>";
+    elAlarmSound.innerHTML = "<audio autoplay loop>" + 
+                            "<source src='sounds/play.mp3' type='audio/mpeg'>" +
+                            "</audio>";
   } else {
     elAlarmClock.classList.remove("shake"); 
     elAlarmSound.innerHTML = "";
