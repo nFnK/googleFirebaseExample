@@ -1,6 +1,6 @@
 /*
     First you need to set your db variable, config variable which has the firebase information that 
-    firebase provides for you. I added two elements here that are on my dom for ease-of-use. :)
+    firebase provides for you. I added a few elements here that are on my dom for ease-of-use. :)
 */
 var db,
     config = {
@@ -9,7 +9,6 @@ var db,
         databaseURL: "https://example-a01c4.firebaseio.com",
         storageBucket: "example-a01c4.appspot.com",
     },
-    //elCountInput = document.querySelector("#user-count");
     elAlarmClock = document.querySelector(".alarm-wrapper img"),
     elOnAlarmBtn = document.querySelector(".on-alarm"),
     elOffAlarmBtn = document.querySelector(".off-alarm"),
@@ -34,11 +33,10 @@ db.ref('userPopulation/userCount').on('value', function(snapshot) {
     elAlarmClock.classList.remove("shake"); 
     elAlarmSound.innerHTML = "";
   }
-  //document.querySelector(".count").innerHTML = snapshot.val();
 });
 
 /*
-   You will most likely not need this, but this is an event listener for the click of the button I made
+   These are event listeners for the click of the buttons I made
    It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
 */
 elOnAlarmBtn.addEventListener("click", function () {

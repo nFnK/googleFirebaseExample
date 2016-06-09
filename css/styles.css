@@ -1,14 +1,7 @@
 body {
 	background: #4dd0e1;
 }
-/*.title, .count {
-	color: #FFF;
-	text-align: center;
-}
-.count {
-	font-size: 2rem;
-    font-weight: 700;
-}*/
+
 .alarm-wrapper {
     text-align: center;
 }
@@ -40,13 +33,7 @@ body {
 .change-value-wrapper {
     text-align: center;
 }
-/*#user-count {
-    border: none;
-    border-radius: 7px;
-    font-size: 1.3rem;
-    padding: 5px;
-    width: 100px;
-}*/
+
 .btn {
     background: #00838f;
     border: none;
