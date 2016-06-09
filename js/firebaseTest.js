@@ -29,8 +29,10 @@ db.ref('userPopulation/userCount').on('value', function(snapshot) {
   console.log(snapshot);
   if (snapshot.val() === 1) {
     elAlarmClock.className = "shake";
+    elAlarmSound.innerHTML = "<embed src='sounds/play.mp3' autostart=true loop=true volume=100 hidden=true>";
   } else {
     elAlarmClock.classList.remove("shake"); 
+    elAlarmSound.innerHTML = "";
   }
   //document.querySelector(".count").innerHTML = snapshot.val();
 });
@@ -41,9 +43,7 @@ db.ref('userPopulation/userCount').on('value', function(snapshot) {
 */
 elOnAlarmBtn.addEventListener("click", function () {
    db.ref('userPopulation/userCount').set(1); 
-   elAlarmSound.innerHTML = "<embed src='sounds/play.mp3' autostart=true loop=true volume=100 hidden=true>";
 });
 elOffAlarmBtn.addEventListener("click", function () {
    db.ref('userPopulation/userCount').set(0); 
-   elAlarmSound.innerHTML = "";
 });
