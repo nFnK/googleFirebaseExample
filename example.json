@@ -1,9 +1,16 @@
-/*
-    This is a simple example of the json structure I have created in firebase.
- */
-
 {
+  "messages": [
+    {
+      "name": "Josh",
+      "text": "This is a test..."
+    },
+    {
+      "name": "Ryan",
+      "text": "This is awesome..."
+    }
+  ],
   "userPopulation" : {
     "userCount" : "1337"
-  }
+  },
+  "AlarmFlag": 0
 }
