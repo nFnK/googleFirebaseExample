@@ -24,10 +24,11 @@
         which I pass into the callback function. This is where all of the magic happens.
     */
     db.ref('messages/').on('value', function(snapshot) {
-        var el = document.createElement('dl');
+        var el = document.createElement('section');
         
         for (var i = 0; i < snapshot.val().length; i++) {
-            el.innerHTML += ("<dt>" + snapshot.val()[i].name + "</dt><dd>" + snapshot.val()[i].text + "</dd>");
+            el.innerHTML += ("<div class='message-section'><span class='name'>" + snapshot.val()[i].name + 
+                                "</span><span class='text'>" + snapshot.val()[i].text + "</span></div>");
         }
             elMessages.innerHTML = '';
             elMessages.appendChild(el);
