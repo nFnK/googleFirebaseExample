@@ -10,6 +10,8 @@
             databaseURL: "https://example-a01c4.firebaseio.com",
             storageBucket: "example-a01c4.appspot.com",
         },
+        elUserName = document.querySelector("#username"),
+        elMessageBox = document.querySelector(".message-box"),
         elMessages = document.querySelector(".messages"),
         elSendBtn = document.querySelector(".send");
 
@@ -25,8 +27,9 @@
     */
     db.ref('messages/').on('value', function(snapshot) {
         var el = document.createElement('section');
-        
-        for (var i = 0; i < snapshot.val().length; i++) {
+
+        // for (var i = 0; i < snapshot.val().length; i++) {
+        for (var i in snapshot.val()) {
             el.innerHTML += ("<div class='message-section'><span class='name'>" + snapshot.val()[i].name + 
                                 "</span><span class='text'>" + snapshot.val()[i].text + "</span></div>");
         }
@@ -39,6 +42,9 @@
         It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
     */
     elSendBtn.addEventListener("click", function () {
-        db.ref('messages/' + 0 + '/name').set("James"); 
+        db.ref('messages/').push({
+            name: elUserName.value,
+            text: elMessageBox.value
+        });
     });
 })();
