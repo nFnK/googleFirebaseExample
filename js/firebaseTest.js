@@ -24,8 +24,7 @@
         which I pass into the callback function. This is where all of the magic happens.
     */
     db.ref('userPopulation/userCount').on('value', function(snapshot) {
-    console.log(snapshot);
-    document.querySelector(".count").innerHTML = snapshot.val();
+        document.querySelector(".count").innerHTML = snapshot.val();
     });
 
     /*
@@ -33,6 +32,6 @@
     It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
     */
     elCountBtn.addEventListener("click", function () {
-    db.ref('userPopulation/userCount').set(elCountInput.value); 
+        db.ref('userPopulation/userCount').set(elCountInput.value); 
     });
 })();
