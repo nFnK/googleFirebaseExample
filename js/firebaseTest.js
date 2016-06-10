@@ -28,7 +28,6 @@
     db.ref('messages/').on('value', function(snapshot) {
         var el = document.createElement('section');
 
-        // for (var i = 0; i < snapshot.val().length; i++) {
         for (var i in snapshot.val()) {
             el.innerHTML += ("<div class='message-section'><span class='name'>" + snapshot.val()[i].name + 
                                 "</span><span class='text'>" + snapshot.val()[i].text + "</span></div>");
