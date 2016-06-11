@@ -3,6 +3,7 @@
     firebase provides for you. I added two elements here that are on my dom for ease-of-use. :)
 */
 (function () {
+    'use strict';
     var db,
         config = {
             apiKey: "AIzaSyBAKvOR3I8qoZq-TjTXuIpfUqdQH1Pys9Q",
@@ -10,7 +11,7 @@
             databaseURL: "https://example-a01c4.firebaseio.com",
             storageBucket: "example-a01c4.appspot.com",
         },
-        elCountInput = document.querySelector("#user-count");
+        elCountInput = document.querySelector("#user-count"),
         elCountBtn = document.querySelector("#user-count-btn");
 
     // Initialize your instance of firebase    
