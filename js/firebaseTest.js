@@ -3,6 +3,7 @@
     firebase provides for you. I added two elements here that are on my dom for ease-of-use. :)
 */
 (function () {
+    'use strict';
     var db,
         config = {
             apiKey: "AIzaSyBAKvOR3I8qoZq-TjTXuIpfUqdQH1Pys9Q",
@@ -20,6 +21,14 @@
 
     //Store your instance in a variable;
     db = firebase.database();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var elBodyHeight = document.querySelector("body").offsetHeight,
+            elMessageWrapperHeight = document.querySelector(".message-box-wrapper").offsetHeight;
+
+        document.querySelector(".messages").style.height = elBodyHeight - elMessageWrapperHeight - 20 + "px";
+        
+    });
 
     /*
         This is a firebase reference that grabs my json object and also by default refreshes the value on the page

@@ -3,6 +3,10 @@
 }
 body {
 	background: #00bcd4;
+    position: relative;
+}
+.messages {
+    overflow: auto;
 }
 .message-section {
     background: #00838f;
@@ -14,6 +18,11 @@ body {
 }
 .name {
     margin-right: 15px;
+}
+.message-box-wrapper {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 .textbox, .message-box {
     border: none;
