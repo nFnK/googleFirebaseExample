@@ -7,14 +7,14 @@
 <body>
     <div class="messages"></div>
     
-    <div class="message-box-wrapper">
+    <form class="message-box-wrapper">
         <label for="username" class="hide508">Username:</label>
-        <input type="text" id="username" class="textbox" placeholder="Username">
+        <input type="text" id="username" class="textbox" placeholder="Username" required>
 
         <label for="message-box" class="hide508">Message:</label>
-        <textarea name="message-box" class="message-box" id="message-box" placeholder="Say something..."></textarea>
+        <textarea name="message-box" class="message-box" id="message-box" placeholder="Say something..." required></textarea>
         <button class="send btn">SEND</button>
-    </div>
+    </form>
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="js/firebaseTest.js"></script>
 </body>

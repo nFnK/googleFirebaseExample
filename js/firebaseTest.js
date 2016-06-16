@@ -22,13 +22,20 @@
     //Store your instance in a variable;
     db = firebase.database();
 
+    // on page load, it checks the height of our message container, and draws the size of the messages list height.
     document.addEventListener("DOMContentLoaded", function () {
+        setMessagesHeight();
+    });
+    window.addEventListener("resize", function () {
+        setMessagesHeight();
+    });
+
+    var setMessagesHeight = function () {
         var elBodyHeight = document.querySelector("body").offsetHeight,
             elMessageWrapperHeight = document.querySelector(".message-box-wrapper").offsetHeight;
 
         document.querySelector(".messages").style.height = elBodyHeight - elMessageWrapperHeight - 20 + "px";
-        
-    });
+    }
 
     /*
         This is a firebase reference that grabs my json object and also by default refreshes the value on the page
@@ -49,10 +56,15 @@
         You will most likely not need this, but this is an event listener for the click of the button I made
         It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
     */
-    elSendBtn.addEventListener("click", function () {
-        db.ref('messages/').push({
-            name: elUserName.value,
-            text: elMessageBox.value
-        });
+    elSendBtn.addEventListener("click", function (e) {
+
+        if (elUserName.value && elMessageBox.value) {
+            e.preventDefault();
+            db.ref('messages/').push({
+                name: elUserName.value,
+                text: elMessageBox.value
+            });
+        }
+
     });
 })();
