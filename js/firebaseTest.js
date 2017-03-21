@@ -21,7 +21,7 @@
     db = firebase.database();
 
     /*
-        This is a firebase reference that grabs my json object and also by default refreshes the value on the page
+        This is a firebase reference that grabs my json object and by default refreshes the value on the page
         which I pass into the callback function. This is where all of the magic happens.
     */
     db.ref('AlarmFlag').on('value', function (snapshot) {
@@ -40,7 +40,7 @@
        These are event listeners for the click of the buttons I made
        It will save a new value into firebase. I did this to demonstrate how awesome it works. :)
     */
-    for (var i =0 ; i < elOnOffAlarmBtn.length ; i++) {
+    for (var i = 0 ; i < elOnOffAlarmBtn.length ; i++) {
         elOnOffAlarmBtn[i].addEventListener("click", function (e) {
             db.ref('AlarmFlag').set(parseInt(e.currentTarget.getAttribute("value")));
         });
